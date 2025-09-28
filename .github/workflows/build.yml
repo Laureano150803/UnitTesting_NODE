@@ -25,7 +25,7 @@ jobs:
 
       - name: Run ESLint
         run: npx eslint src --ext .ts --format stylish
-test:
+  test:
     name: Test and Coverage
     runs-on: ubuntu-latest
     steps:
