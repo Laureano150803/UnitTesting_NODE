@@ -1,3 +1,5 @@
+integrantes: Laureano Hurtado, Daniel Avila, Pedro Herrera
+
 # Node.js TypeScript Project
 
 This project is a Node.js application written in TypeScript. It serves as a template for building scalable and maintainable applications using TypeScript.
