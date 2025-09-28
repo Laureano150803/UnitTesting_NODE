@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Fix ESLint permissions
+        run: chmod +x node_modules/.bin/eslint
+
       - name: Run ESLint
         run: npx eslint src --ext .ts --format stylish
   test:
@@ -36,6 +39,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Fix Jest permissions
+        run: chmod +x node_modules/.bin/jest  
 
       - name: Run tests with coverage (falla si <90%)
         run: npx jest --coverage --coverageReporters=lcov --coverageReporters=cobertura --coverageThreshold='{"global":{"branches":90,"functions":90,"lines":90,"statements":90}}'
