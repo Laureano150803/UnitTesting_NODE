@@ -108,3 +108,17 @@ jobs:
         run: |
           docker tag node-ts-app ${{ secrets.DOCKER_USERNAME }}/node-ts-app:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/node-ts-app:latest
+
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
+          VALIDATE_JAVASCRIPT_ES: false 
+          VALIDATE_TYPESCRIPT_ES: false
+          VALIDATE_MARKDOWN: false
+          VALIDATE_YAML: true
+          VALIDATE_JSON: true
+          VALIDATE_SHELLSH: false
+          VALIDATE_DOCKERFILE: true
+          FILTER_REGEX_EXCLUDE: 'node_modules|dist|.github|coverage|docs|.vscode|scripts'
